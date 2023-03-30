@@ -1,13 +1,12 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
+import { compilerOptions } from './tsconfig.json';
+import { pathsToModuleNameMapper } from 'ts-jest';
 
-export default {
+module.exports = {
+  clearMocks: true,
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+    prefix: '<rootDir>',
+  }),
   preset: 'ts-jest',
   testEnvironment: 'node',
-  transform: {
-    'node_modules/variables/.+\\.(j|t)sx?$': 'ts-jest',
-  },
-  transformIgnorePatterns: ['node_modules/(?!variables/.*)'],
+  modulePathIgnorePatterns: ['<rootDir>/dist'],
 };
