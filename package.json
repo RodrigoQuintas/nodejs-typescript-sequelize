@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "export TS_JEST_DISABLE_VER_CHECKER=true && jest --runInBand",
-    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/server.ts --copy-files --no-copy-ignored",
+    "dev": "ts-node-dev --respawn --ignore-watch node_modules src/application/index.ts --copy-files --no-copy-ignored",
     "build": "babel src  --extensions \".js,.ts\" --out-dir dist",
     "start": "node dist/server.js"
   },
