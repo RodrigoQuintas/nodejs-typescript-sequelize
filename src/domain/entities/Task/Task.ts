@@ -1,5 +1,5 @@
-import { ValidationError } from '../../errors/ValidationError';
-import { User } from '../User/User';
+import { User } from '../user/user';
+import { ValidationError } from '../../errors/validation-error';
 
 export enum Priority {
   high = 'high',
