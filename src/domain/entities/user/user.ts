@@ -5,9 +5,11 @@ export enum Type {
   admin = 'admin',
 }
 
-interface UserConstructorArgs {
-  email: string;
+export interface IUser {
+  id: string;
   name: string;
+  email: string;
+  password: string;
   type: Type;
 }
 
@@ -15,15 +17,17 @@ export abstract class User {
   private static EMAIL_REGEX =
     /^([a-z]){1,}([a-z0-9._-]){1,}([@]){1}([a-z]){2,}([.]){1}([a-z]){2,}([.]?){1}([a-z]?){2,}$/i;
 
+  private id: string;
   private name: string;
   private email: string;
+  private password: string;
   private type: Type;
 
-  constructor(args: UserConstructorArgs) {
-    const { email } = args;
+  constructor(user: IUser) {
+    const { email } = user;
     this.validateEmail(email);
 
-    Object.assign(this, args);
+    Object.assign(this, user);
   }
 
   private validateEmail(email: string) {
@@ -34,12 +38,22 @@ export abstract class User {
     }
   }
 
+  protected abstract validatePassword(password: string): void;
+
+  getId(): string {
+    return this.id;
+  }
+
   getEmail(): string {
     return this.email;
   }
 
   getName(): string {
     return this.name;
+  }
+
+  getPassword(): string {
+    return this.password;
   }
 
   getType(): Type {
