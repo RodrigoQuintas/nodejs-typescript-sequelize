@@ -1,6 +1,10 @@
-import { ValidationError } from '../../../domain/errors/validation-error';
-import { CreateUserUseCase } from '../../../domain/usecases/user/create-user';
-import { IController, IRequest, IResponse } from '../controller.interface';
+import { ValidationError } from '../../domain/errors/validation-error';
+import { CreateUserUseCase } from '../../domain/usecases/user/create-user';
+import {
+  IController,
+  IRequest,
+  IResponse,
+} from '../adapters/controller.interface';
 
 export class CreateUserController implements IController {
   constructor(private service: CreateUserUseCase) {}
