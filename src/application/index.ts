@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import ExpressRoutesAdapter from '../infrastructure/adapters/expressjs/express-routes.adapter';
+import ExpressRoutesAdapter from '@infrastructure/adapters/expressjs/express-routes.adapter';
 import { CreateUserControllerFactory } from './factories/create-user-controller.factory';
 dotenv.config();
 

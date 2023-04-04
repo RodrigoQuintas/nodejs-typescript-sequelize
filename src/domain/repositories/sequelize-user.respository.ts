@@ -1,4 +1,4 @@
-import { SequelizeUser } from '../../infrastructure/database/models/user.model';
+import { SequelizeUser } from '@infrastructure/database/models/user.model';
 import { User } from '../entities/user/user';
 import { CreateUserRepository } from '../usecases/user/create-user';
 

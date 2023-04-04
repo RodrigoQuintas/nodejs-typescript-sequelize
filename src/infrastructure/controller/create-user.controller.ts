@@ -1,5 +1,5 @@
-import { ValidationError } from '../../domain/errors/validation-error';
-import { CreateUserUseCase } from '../../domain/usecases/user/create-user';
+import { ValidationError } from '@domain/errors/validation-error';
+import { CreateUserUseCase } from '@domain/usecases/user/create-user';
 import {
   IController,
   IRequest,

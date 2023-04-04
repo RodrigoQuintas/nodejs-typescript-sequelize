@@ -1,7 +1,7 @@
 import { VisitantUser } from '../../../domain/entities/user/visitant-user';
 import { User, Type, IUser } from '../../../domain/entities/user/user';
 import { ValidationError } from '../../errors/validation-error';
-import { AdminUser } from '../../../domain/entities/user/admin-user';
+import { AdminUser } from '@domain/entities/user/admin-user';
 import { v4 as uuid } from 'uuid';
 
 export interface CreateUserRepository {
